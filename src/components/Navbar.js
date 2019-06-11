@@ -2,20 +2,46 @@ import React, { Component } from 'react';
 import {Text,StyleSheet,View,TouchableHighlight} from 'react-native'
 import {Icon} from 'react-native-vector-icons/FontAwesome'
 
+import { Searchbar, Appbar, Headline } from 'react-native-paper';
+import { Toolbar } from 'react-native-material-ui';
 
 export default class Navbar extends Component {
+    constructor(props,context){
+        super(props,context);
+        this.state = {
+            isSearchActive:false,
+            searchValue:''
+        };
+    }
+
+    onSearchPressed = () => {
+        this.setState({ isSearchActive: true });
+    }
+    onSearchTextChanged = (searchValue) => {
+        this.setState({ searchValue });
+    }
+    onSearchClearPressed = () => {
+        this.onSearchTextChanged('');
+    }
+    onSearchClosed = () => {
+        this.setState({ isSearchActive: false, searchValue: '' });
+    }
 
   render() {
+      const { isSearchActive, searchValue } = this.state;
     return (
-        <View style={styles.Navbar}>
-            <TouchableHighlight >
-                <Icon name={this.props.icon} size={25} color="#fff" />
-            </TouchableHighlight>
-            <Text>UFC INFO</Text>
-            <Icon name="search" size={25} color="#fff"/>
-            <Icon name="notification" size={25} color="#fff" />
-            <Icon name="ellipsis-v" size={25} color="#fff" />
-        </View>  
+
+        <Toolbar
+            leftElement="menu"
+            centerElement="UFC INFO"
+            searchable={{
+                autoFocus: true,
+                placeholder: 'Pesquise',
+            }}
+            
+            onRightElementPress={(label) => { console.log(label) }}
+            style={{ container: { backgroundColor: 'gray' } }}
+        />
     );
   }
 
@@ -29,5 +55,24 @@ const styles = StyleSheet.create({
         paddingVertical: 15,
         justifyContent: 'space-between',
         paddingTop: 25
+    },
+    container: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        height: 80,
+        backgroundColor: "#dedede",
+        elevation: 4,
+    },
+    statusBar: {
+        height: 24,
+    },
+    toolbarContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginHorizontal: 8,
+        height: 56,
+        flex: 1,
     },
 })

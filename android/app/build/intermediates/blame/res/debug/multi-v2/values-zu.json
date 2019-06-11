@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/everton/Documents/ufcinfo/UFC-INFO/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zu/values-zu.xml",
+            "outputFile": "/home/everton/UFC_INFO/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zu/values-zu.xml",
             "map": [
                 {
                     "source": "/home/everton/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/bf19c998d43afc6947d4799e2088b522/res/values-zu/values-zu.xml",

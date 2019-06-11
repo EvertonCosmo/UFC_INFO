@@ -3,9 +3,9 @@ import { Text, View, StyleSheet, KeyboardAvoidingView, TextInput, Image, Dimensi
   ListView,
 } from 'react-native'
 
-// import { Searchbar, Appbar, Headline} from 'react-native-paper';
 import Bar from '../components/Navbar'
 const { width, height } = Dimensions.get('window')
+import { ListItem } from 'react-native-material-ui';
 export default class Main extends Component {
 
 
@@ -27,17 +27,24 @@ export default class Main extends Component {
     const { firstQuery } = this.state;
     return (
     
-   
-        
+     
         <View style={styles.container}>
-        
+        <Bar />
+
           <KeyboardAvoidingView behavior='padding' style={styles.container}>
             <View style={styles.content}>
-              
+{/*               
               <Image
                  source={{ uri:'http://4.bp.blogspot.com/-t9WuM4GdaS4/UU9mrctcHSI/AAAAAAAAAiI/VFBWaIzHIgs/s1600/brasao_ufc.png'}}
                 style={{ height: 150, width:110, marginTop:30, marginLeft:120}}
-              />
+              /> */}
+            <ListItem
+              divider
+              centerElement={{
+                primaryText: 'Primary text',
+              }}
+              onPress={() => { }}
+            />
              
             </View>
 
