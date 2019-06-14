@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import {Text,StyleSheet,View,TouchableHighlight} from 'react-native'
 import {Icon} from 'react-native-vector-icons/FontAwesome'
-
+import {DrawerActions} from "react-navigation"
 import { Searchbar, Appbar, Headline } from 'react-native-paper';
 import { Toolbar } from 'react-native-material-ui';
 
+
+
 export default class Navbar extends Component {
+   
     constructor(props,context){
         super(props,context);
         this.state = {
             isSearchActive:false,
             searchValue:''
+            
         };
     }
+    
 
     onSearchPressed = () => {
         this.setState({ isSearchActive: true });
@@ -26,21 +31,28 @@ export default class Navbar extends Component {
     onSearchClosed = () => {
         this.setState({ isSearchActive: false, searchValue: '' });
     }
+   
 
+    
+    navigate() {
+        this.props.navigation.toggleDrawer();
+    }
+    
   render() {
       const { isSearchActive, searchValue } = this.state;
+   
     return (
 
         <Toolbar
             leftElement="menu"
-            centerElement="UFC INFO"
+            centerElement={this.props.title}
             searchable={{
                 autoFocus: true,
                 placeholder: 'Pesquise',
+               
             }}
-            
-            onRightElementPress={(label) => { console.log(label) }}
-            style={{ container: { backgroundColor: 'gray' } }}
+            onLeftElementPress={() => this.navigate()}
+            style={{ container: { backgroundColor: '#113355' } }}
         />
     );
   }

@@ -1,4 +1,4 @@
-#Sun Jun 09 00:20:52 BRT 2019
+#Thu Jun 13 18:49:00 BRT 2019
 base.0=/home/everton/UFC_INFO/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

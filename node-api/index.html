@@ -7,16 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
 
+   <h1> </h1>
+        <h4>Data: <span id="data"></span></h4>
   <script>
-    var socket = io.connect('http://localhost:3000'); //connect to server
-
+    var socket = io('http://localhost:3000'); //connect to server
+  socket.on("connection",()=>{
+        console.log("connected to server")
+    })
     socket.on('post', function (data) {
         console.log(data)
-        document.getElementById('data').innerHTML = data;
+        document.getElementById('data').innerHTML = data.content;
 
     })
+  
 </script>
 </body>
 </html>
