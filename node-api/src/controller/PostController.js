@@ -20,6 +20,11 @@ module.exports = {
     async singlePost(req,res){
     	const post = await Post.findById(req.params.id);
     	return res.json(post)
+    },
+    async delete(req,res){
+        const post = await Post.findByIdAndRemove(req.params.id);
+        return res.json({message:'sucessfully deleted'})
+
     }
 
 }

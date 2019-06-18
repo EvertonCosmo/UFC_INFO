@@ -31,7 +31,8 @@ export default class FeedPosts extends Component{
   }
 
   subscribeToEvents() {
-    const io = socket("http://10.42.0.1:3000")
+    // const io = socket("http://10.42.0.1:3000")
+    const io = socket("http://10.0.0.9:3000")
     io.on("post",data => {
       this.setState({posts:[data, ...this.state.posts]});
     })

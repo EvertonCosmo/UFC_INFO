@@ -12,10 +12,11 @@ export default class Navbar extends Component {
     constructor(props,context){
         super(props,context);
         this.state = {
-            isSearchActive:false,
-            searchValue:''
+            text: '',
+            isSearchActive:false
             
         };
+        this.arrayholder = [];
     }
     
 
@@ -37,23 +38,51 @@ export default class Navbar extends Component {
     navigate() {
         this.props.navigation.toggleDrawer();
     }
+
+    searchFilterFunction(text){
+        const newData = this.arrayholder.filter((item)=>{
+            const itemData = item.title ? item.title.toUpperCase() : ''.toUpperCase();
+            const textData = text.toUpperCase();
+            return itemData.indexOf(textData) > -1 ;
+        });
+        this.setState({
+            dataSource:newData,
+            text : text,
+        })
+    }
+
+    componentDidMount(){
+        this.setState({
+            dataSource: this.props.posts
+        })
+        
+            this.arrayholder = this.props.posts;
+        }
     
   render() {
       const { isSearchActive, searchValue } = this.state;
-   
-    return (
+    //   const { posts } = this.props;
 
+
+    return (
+    <View>
         <Toolbar
             leftElement="menu"
             centerElement={this.props.title}
             searchable={{
                 autoFocus: true,
                 placeholder: 'Pesquise',
-               
+                onChangeText: text => this.searchFilterFunction(text), 
+            
+                
             }}
+                value={this.state.text}
+            
             onLeftElementPress={() => this.navigate()}
             style={{ container: { backgroundColor: '#113355' } }}
         />
+       
+        </View>
     );
   }
 

@@ -31,16 +31,15 @@ export default class MenuDrawer extends Component {
             <View styles={styles.bottomLinks}> 
                     {this.navLink('Home','Home')} 
                     {this.navLink('ExtensionProjects', 'Projetos Extensão')} 
-                    {this.navLink('Home', 'Home')}
-                    {this.navLink('ExtensionProjects', 'Projetos Extensão')} 
-                    {this.navLink('Home', 'Home')}
-                    {this.navLink('ExtensionProjects', 'Projetos Extensão')} 
-                    {this.navLink('Home', 'Home')}
-                    {this.navLink('ExtensionProjects', 'Projetos Extensão')} 
-                    {this.navLink('Home', 'Home')}
-                    {this.navLink('ExtensionProjects', 'Projetos Extensão')} 
-                    {this.navLink('Home', 'Home')}
-                    {this.navLink('ExtensionProjects', 'Projetos Extensão')} 
+                    {this.navLink('Home','Home')} 
+                    {this.navLink('Home', 'Projetos Extensão')} 
+                    {this.navLink('Home','Home')} 
+                    {this.navLink('Home', 'Projetos Extensão')} 
+                    {this.navLink('Home','Home')} 
+                    {this.navLink('Home', 'Projetos Extensão')} 
+                    {this.navLink('Home','Home')} 
+                    {this.navLink('Home', 'Projetos Extensão')} 
+                   
                 
             </View>
             </ScrollView>
