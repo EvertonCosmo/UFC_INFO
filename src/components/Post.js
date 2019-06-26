@@ -9,12 +9,12 @@ import 'moment-timezone';
 import moment from 'moment'
 
 export default class Post extends Component {
-  formatDate(date){
-    Moment(date()).format("YYYY-MM-DD hh:mm:ss");
-  }
+  // formatDate(date){
+  //   Moment(date()).format("YYYY-MM-DD hh:mm:ss");
+  // }
   render() {
   const { post } = this.props;
-  const {thisMoment} = moment(post.created).format("MM ddd, YYYY hh:mm:ss a")
+  // const thisMoment = moment(post.created).format("MM ddd, YYYY hh:mm:sss").fromNow()
     return(
       // <Container>
       //   <Header/>
@@ -49,7 +49,10 @@ export default class Post extends Component {
           <Paragraph style={{fontSize: 12, textAlign:'justify',}}>{post.content}</Paragraph>
           
           {/* <Moment fromNow> */}
-           <Text> {thisMoment}</Text>
+           {/* <Text> {thisMoment}</Text> */}
+          <Moment element={Text} fromNow> 
+              {post.created}
+           </Moment>
           {/* </Moment> */}
           {/* <Text>{post.created}</Text> */}
           
@@ -66,7 +69,7 @@ const styles = StyleSheet.create({
       paddingTop: 10,
       borderTopWidth: 1,
       borderRadius: 10,
-      padding: 6,
+      padding: 2,
       backgroundColor: 'white',
       borderTopColor: 'lightgray'
       },
