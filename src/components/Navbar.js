@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import {Text,StyleSheet,View,TouchableHighlight} from 'react-native'
+import {Text,StyleSheet,View,TouchableHighlight,Image} from 'react-native'
 import {Icon} from 'react-native-vector-icons/FontAwesome'
 import {DrawerActions} from "react-navigation"
 import { Searchbar, Appbar, Headline } from 'react-native-paper';
 import { Toolbar } from 'react-native-material-ui';
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
 
 
 export default class Navbar extends Component {
@@ -69,17 +69,19 @@ export default class Navbar extends Component {
         <Toolbar
             leftElement="menu"
             centerElement={this.props.title}
+                // centerElement={<Image source={{ uri: 'http://4.bp.blogspot.com/-t9WuM4GdaS4/UU9mrctcHSI/AAAAAAAAAiI/VFBWaIzHIgs/s1600/brasao_ufc.png' }} 
+                // style={{ height: hp('7%'), width: wp('10%'), marginTop:0, marginLeft:0}}/>}
             searchable={{
                 autoFocus: true,
                 placeholder: 'Pesquise',
                 onChangeText: text => this.searchFilterFunction(text), 
             
-                
+                    
             }}
                 value={this.state.text}
             
             onLeftElementPress={() => this.navigate()}
-            style={{ container: { backgroundColor: '#113355' } }}
+            style={{ container: { backgroundColor: '#044072' } }}
         />
        
         </View>

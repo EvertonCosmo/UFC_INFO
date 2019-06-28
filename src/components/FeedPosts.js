@@ -32,7 +32,7 @@ export default class FeedPosts extends Component{
 
   subscribeToEvents() {
     // const io = socket("http://10.42.0.1:3000")
-    const io = socket("http://10.0.0.9:3000")
+    const io = socket("http://192.168.1.11:3000")
     io.on("post",data => {
       this.setState({posts:[data, ...this.state.posts]});
     })
@@ -50,7 +50,7 @@ export default class FeedPosts extends Component{
             data={this.state.posts}
             keyExtractor={post => post._id}
             // renderItem = {this.renderItem(post => post) }
-            renderItem={({item})=> <Post post={item}/> }
+            renderItem={({item})=> <Post post={item} navigation={this.props.navigation}/> }
          />
 
         
