@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import {Text,StyleSheet,View,TouchableHighlight,Image} from 'react-native'
-import {Icon} from 'react-native-vector-icons/FontAwesome'
-import {DrawerActions} from "react-navigation"
-import { Searchbar, Appbar, Headline } from 'react-native-paper';
 import { Toolbar } from 'react-native-material-ui';
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
 
 
 export default class Navbar extends Component {

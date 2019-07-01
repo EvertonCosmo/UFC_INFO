@@ -3,16 +3,23 @@ import { Text, View, StyleSheet, KeyboardAvoidingView, TextInput, Image, Dimensi
   ListView,
 } from 'react-native'
 import { ListItem } from 'react-native-material-ui';
+import Icon from 'react-native-vector-icons/FontAwesome'
 import socket from "socket.io-client"
-import Bar from '../components/Navbar'
-import api from '../service/api'
+import Bar from '../../components/NavBar/Navbar'
+import api from '../../service/api'
 
-import FeedPosts from '../components/FeedPosts';
+import FeedPosts from '../../components/Feed/FeedPosts';
 
-
+import tabBarIcon from './tabBarIcons'
 
 
 export default class HomeScreen extends Component {
+  static navigationOptions ={ 
+    // tabBarIcon: tabBarIcon("home"),
+    tabBarLabel:'Interno',
+    tabBarIcon: <Icon name="home" size={24} color="blue"/>,
+    
+  };
 
   state = {
     posts: [],
@@ -34,8 +41,7 @@ export default class HomeScreen extends Component {
   }
 
   subscribeToEvents() {
-    // const io = socket("http://10.42.0.1:3000")
-    const io = socket("http://10.0.0.9:3000")
+    const io = socket("http://10.42.0.1:3000")
     io.on("post", data => {
       this.setState({ posts: [data, ...this.state.posts] });
     })

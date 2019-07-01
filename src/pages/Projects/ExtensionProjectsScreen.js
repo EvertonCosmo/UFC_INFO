@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
-import Bar from "../components/Navbar"
+import Bar from "../../components/NavBar/Navbar"
 export default class ExtensionProjects extends Component {
 
   static navigationOptions = {

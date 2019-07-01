@@ -5,7 +5,7 @@
 import {AppRegistry} from 'react-native';
 import App from './src';
 import {name as appName} from './app.json';
-import { COLOR, ThemeContext, getTheme } from 'react-native-material-ui';
+
 export default function Main(){
     return(
        
