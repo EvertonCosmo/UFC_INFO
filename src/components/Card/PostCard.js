@@ -32,7 +32,10 @@ export default class Post extends Component {
       <Card style={styles.body} onPress={() => {this.props.navigation.navigate('PostView',{post:post}
         );
         }}>
+
         <Card.Cover source={{ uri: 'http://4.bp.blogspot.com/-t9WuM4GdaS4/UU9mrctcHSI/AAAAAAAAAiI/VFBWaIzHIgs/s1600/brasao_ufc.png' }} style={{ height:hp('40%'), flex: 1 }} />
+
+        {/* <Card.Cover/> */}
         <Card.Content>
           <Paragraph style={styles.title}>{post.title}</Paragraph>
           

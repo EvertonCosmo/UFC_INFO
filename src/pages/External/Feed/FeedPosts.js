@@ -10,7 +10,7 @@ export default class FeedPosts extends Component{
   static navigationOptions = {
     // tabBarIcon: tabBarIcon("home"),
     tabBarLabel: 'Externo',
-    tabBarIcon: <Icon name="users" size={24} color="blue" />,
+    tabBarIcon: <Icon name="users" size={24} color="#044072" />,
 
   };
 

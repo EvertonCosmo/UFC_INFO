@@ -7,6 +7,8 @@ export default class PostViewData extends Component {
      
      headerStyle: {
        backgroundColor: '#044072',
+       
+      //  background: 'http://4.bp.blogspot.com/-t9WuM4GdaS4/UU9mrctcHSI/AAAAAAAAAiI/VFBWaIzHIgs/s1600/brasao_ufc.png',
      },
      headerTintColor: '#FFFFFF',
 
